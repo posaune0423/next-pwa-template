@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import withSerwistInit from '@serwist/next'
 
-export default nextConfig;
+const pwaConfig = withSerwistInit({
+  swSrc: 'app/sw.ts',
+  swDest: 'public/sw.js',
+  disable: process.env.NODE_ENV === 'development',
+})
+
+const nextConfig = pwaConfig({})
+
+export default nextConfig
