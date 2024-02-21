@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from './providers'
+import Header from '@/components/Header'
 import { APP_NAME, APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_TITLE_TEMPLATE } from '@/constants'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     template: APP_TITLE_TEMPLATE,
   },
   description: APP_DESCRIPTION,
-  manifest: "/manifest.json",
+  manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -59,6 +60,7 @@ const RootLayout = ({
     <html lang='en'>
       <head />
       <body className={inter.className}>
+        <Header />
         <Providers>{children}</Providers>
       </body>
     </html>

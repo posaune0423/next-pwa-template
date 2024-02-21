@@ -19,7 +19,7 @@ interface Config {
  * prompt A2HS if available.
  * Only Chrome and Edge is supported. (https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent)
  */
-export const useA2HS = (config?: Config): [IBeforeInstallPromptEvent | null, () => void] => {
+export const useA2HS = (config?: Config) => {
   const [promptEvent, setPromptEvent] = useState<IBeforeInstallPromptEvent | null>(null)
 
   const promptToInstall = () => {
@@ -48,5 +48,5 @@ export const useA2HS = (config?: Config): [IBeforeInstallPromptEvent | null, () 
     }
   }, [config])
 
-  return [promptEvent, promptToInstall]
+  return { promptEvent, promptToInstall }
 }
