@@ -3,7 +3,13 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from './providers'
 import Header from '@/components/Header'
-import { APP_NAME, APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_TITLE_TEMPLATE } from '@/constants'
+import {
+  APP_NAME,
+  APP_DEFAULT_TITLE,
+  APP_DESCRIPTION,
+  APP_TITLE_TEMPLATE,
+  splashScreens,
+} from '@/constants'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +25,7 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: 'default',
     title: APP_DEFAULT_TITLE,
-    // startUpImage: [],
+    startupImage: splashScreens,
   },
   formatDetection: {
     telephone: false,
